@@ -1,5 +1,5 @@
 const app = require('express')()
-const routes = require('./routes')(app)
+const routes = require('./api/routes')(app)
 
 const port = process.env.PORT || 3000
 
