@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const AuthController = require('../api/controllers/AuthController')
+const AuthController = require('../controllers/AuthController')
 
 router.get('/register', AuthController.register)
 
