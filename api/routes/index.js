@@ -1,5 +1,5 @@
 const auth = require('./auth')
 
 module.exports = (app) => {
-    app.use('/auth', auth)
+    app.use('/api/auth', auth)
 }
