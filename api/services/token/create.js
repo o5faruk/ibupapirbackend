@@ -5,5 +5,5 @@ module.exports = async (user) => {
     const token = await jwt.sign(user, config.secret, {
         expiresIn: 24 * 60 * 60
     })
-    return token;
+    return token
 }

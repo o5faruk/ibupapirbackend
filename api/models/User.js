@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     bcrypt = require('bcrypt'),
-    uniqueValidator = require('mongoose-unique-validator');
+    uniqueValidator = require('mongoose-unique-validator')
 
 
 const User = new Schema({

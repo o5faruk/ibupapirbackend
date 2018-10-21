@@ -33,5 +33,9 @@ module.exports = {
         } catch (error) {
             return res.status(500).send({ message: "Server Error" })
         }
+    },
+    me: async (req, res) => {
+        console.log("HERE");
+        return res.json(req.user)
     }
 }
