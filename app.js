@@ -7,6 +7,7 @@ require('dotenv').config();
 
 mongoose.connect(process.env.DB_STRING, { useNewUrlParser: true })
 
+app.use('/', express.static('angular'))
 app.use(express.json())
 
 const routes = require('./api/routes')(app)
