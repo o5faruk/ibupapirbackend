@@ -3,6 +3,8 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose')
 
+require('dotenv').config();
+
 mongoose.connect(process.env.DB_STRING, { useNewUrlParser: true })
 
 app.use(express.json())
