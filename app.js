@@ -3,7 +3,7 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/ibuapibackend', { useNewUrlParser: true })
+mongoose.connect(process.env.DB_STRING, { useNewUrlParser: true })
 
 app.use(express.json())
 

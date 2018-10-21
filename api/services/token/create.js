@@ -1,8 +1,7 @@
 const jwt = require('jsonwebtoken')
-const config = require('../../../config')
 
 module.exports = async (user) => {
-    const token = await jwt.sign(user, config.secret, {
+    const token = await jwt.sign(user, process.env.SECRET, {
         expiresIn: 24 * 60 * 60
     })
     return token
