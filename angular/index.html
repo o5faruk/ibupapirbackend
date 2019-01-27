@@ -12,156 +12,80 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
 </head>
 
-<body ng-app>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Falil' mi papir?</a>
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown hidebig">
-                <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Log Out</a>
-                    <a class="dropdown-item" href="#">Dashboard</a>
-                    <a class="dropdown-item" href="#">Institutions</a>
-                    <a class="dropdown-item" href="#">Documents</a>
-                    <a class="dropdown-item" href="#">Certificates</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                Dashboard
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Institutions
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Documents
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Certificates
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="col-md-10 col-xs-12">
-                <div class="row">
-                    <div class="col-12 p-3">
-                        <div class="d-flex justify-content-between mb-3 border-bottom">
-                            <h3 class="">Institutions</h3>
-                            <div class="btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-primary">
-                                    <i class="fa fa-plus mr-1"></i>Add new
-                                </label>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class="bg-dark" style="color:white">
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Type</th>
-                                        <th scope="col">Muncipality</th>
-                                        <th scope="col">
-                                            <div class="mr-3">
-                                                Options
-                                            </div>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>.</td>
-                                        <td>MUP</td>
-                                        <td>Novo Sarajevo</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-primary">
-                                                <icon class="fa fa-edit"></icon>
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger">
-                                                <icon class="fa fa-trash"></icon>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ministarstvo Unutrasnjih Poslova</td>
-                                        <td>MUP</td>
-                                        <td>Centar</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-primary">
-                                                <icon class="fa fa-edit"></icon>
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger">
-                                                <icon class="fa fa-trash"></icon>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>.</td>
-                                        <td>Opcina</td>
-                                        <td>Centar</td>
-                                        <td class="align-rigt">
-                                            <button type="button" class="btn btn-outline-primary">
-                                                <icon class="fa fa-edit"></icon>
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger">
-                                                <icon class="fa fa-trash"></icon>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>.</td>
-                                        <td>Opcina</td>
-                                        <td>Novi Grad</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-primary">
-                                                <icon class="fa fa-edit"></icon>
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger">
-                                                <icon class="fa fa-trash"></icon>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>.</td>
-                                        <td>Opcina</td>
-                                        <td>Novo Sarajevo</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-primary">
-                                                <icon class="fa fa-edit"></icon>
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger">
-                                                <icon class="fa fa-trash"></icon>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <div class="modal-backdrop fade show"></div> -->
+<body ng-app="app" ng-controller="indexController">
+    <div ng-view></div>
 </body>
+
+<script>
+    const app = angular.module('app', ['ngRoute']);
+
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when('/home', {
+                templateUrl: 'htmltemplates/home.html',
+                controller: 'homeController',
+            })
+            .when('/login', {
+                templateUrl: 'htmltemplates/login.html',
+                controller: 'loginController',
+            })
+            .when('/register', {
+                templateUrl: 'htmltemplates/register.html',
+                controller: 'registerController',
+            })
+    })
+
+    app.controller('indexController', function ($scope, $location, $rootScope) {
+        if (!localStorage.getItem('token')) {
+            $location.path("/login");
+        }
+
+        $rootScope.addModalOpened = false;
+
+        $rootScope.toggleAdd = function () {
+            $rootScope.addModalOpened = !$rootScope.addModalOpened
+        }
+    })
+
+    app.controller('homeController', function ($scope, $location, $http, $rootScope) {
+
+        $scope.institutions = [];
+        console.log("brasno")
+        $scope.logOut = function () {
+            localStorage.clear('token')
+            $location.path("/login");
+        }
+
+        $scope.addInstitution = function (institution) {
+            $http.post('api/institution', institution).then(function (response) {
+                console.log(response);
+                $scope.institutions.push(response.data);
+                $rootScope.toggleAdd();
+            }).catch(function (err) {
+                console.log(err);
+            })
+        }
+
+        const getInstitutions = function () {
+            $http.get('api/institution').then(function (response) {
+                $scope.institutions = response.data;
+            }).catch(function (err) {
+                console.log(err);
+            })
+        }
+
+        getInstitutions();
+
+    })
+
+    app.controller()
+
+</script>
+<script src="controllers/loginController.js"></script>
+<script src="controllers/registerController.js"></script>
 
 </html>

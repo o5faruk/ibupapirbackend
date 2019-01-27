@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Add new Institution</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="toggleAdd()">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -11,11 +11,11 @@
                 <form>
                     <div class="form-group">
                         <label for="institutionName">Name</label>
-                        <input type="text" class="form-control" id="institutionName" placeholder="Enter institution name">
+                        <input type="text" class="form-control" id="institutionName" placeholder="Enter institution name" ng-model="institution.name">
                     </div>
                     <div class="form-group">
                         <label for="institutionType">Institution Type</label>
-                        <select class="form-control" id="institutionType">
+                        <select class="form-control" id="institutionType" ng-model="institution.type">
                             <option>MUP</option>
                             <option>Opcina</option>
                             <option>Mjesna Zajednica</option>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="institutionType">Muncipality</label>
-                        <select class="form-control" id="institutionType">
+                        <select class="form-control" id="institutionType" ng-model="institution.muncipality">
                             <option>Centar</option>
                             <option>Novi Grad</option>
                             <option>Novo Sarajevo</option>
@@ -41,8 +41,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="addInstitution(institution)">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="toggleAdd()">Close</button>
             </div>
         </div>
     </div>
